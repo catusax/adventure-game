@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyfxxqlqkkfu"]
+
+[ext_resource type="Texture2D" uid="uid://dvcru0avcjdkr" path="res://Base-01.png" id="1_l3jyc"]
+[ext_resource type="Script" path="res://button/control.gd" id="1_n0ao6"]
+[ext_resource type="Script" path="res://button/stick.gd" id="2_o748j"]
+[ext_resource type="Script" path="res://ExitButton.gd" id="3_epp8d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly20h"]
+atlas = ExtResource("1_l3jyc")
+region = Rect2(374, 6, 52, 52)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n0ao6")
+
+[node name="jump" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 343.0
+offset_top = -43.0
+offset_right = 343.0
+offset_bottom = -43.0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="jump"]
+position = Vector2(-24, -26)
+texture_normal = SubResource("AtlasTexture_ly20h")
+action = "jump"
+
+[node name="stick" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = -45.0
+offset_right = 53.0
+offset_bottom = -45.0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="stick"]
+position = Vector2(-24, -26)
+texture_normal = SubResource("AtlasTexture_ly20h")
+script = ExtResource("2_o748j")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_top = 14.0
+offset_right = -25.0
+offset_bottom = 45.0
+grow_horizontal = 0
+action_mode = 0
+text = "Exit"
+script = ExtResource("3_epp8d")
