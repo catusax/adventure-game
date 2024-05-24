@@ -1,9 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyfxxqlqkkfu"]
+[gd_scene load_steps=10 format=3 uid="uid://cyfxxqlqkkfu"]
 
 [ext_resource type="Texture2D" uid="uid://dvcru0avcjdkr" path="res://Base-01.png" id="1_l3jyc"]
 [ext_resource type="Script" path="res://button/control.gd" id="1_n0ao6"]
 [ext_resource type="Script" path="res://button/stick.gd" id="2_o748j"]
 [ext_resource type="Script" path="res://ExitButton.gd" id="3_epp8d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1fh6"]
+atlas = ExtResource("1_l3jyc")
+region = Rect2(140, 108, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv3wi"]
+atlas = ExtResource("1_l3jyc")
+region = Rect2(140, 156, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac17a"]
+atlas = ExtResource("1_l3jyc")
+region = Rect2(140, 252, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf3qu"]
+atlas = ExtResource("1_l3jyc")
+region = Rect2(140, 60, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ly20h"]
 atlas = ExtResource("1_l3jyc")
@@ -20,18 +36,32 @@ script = ExtResource("1_n0ao6")
 
 [node name="jump" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 343.0
-offset_top = -43.0
-offset_right = 343.0
-offset_bottom = -43.0
+grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="jump"]
-position = Vector2(-24, -26)
-texture_normal = SubResource("AtlasTexture_ly20h")
+[node name="Y" type="TouchScreenButton" parent="jump"]
+position = Vector2(-89, -81)
+texture_normal = SubResource("AtlasTexture_a1fh6")
+action = "attack"
+
+[node name="X" type="TouchScreenButton" parent="jump"]
+position = Vector2(-113, -58)
+texture_normal = SubResource("AtlasTexture_bv3wi")
+action = "attack"
+
+[node name="B" type="TouchScreenButton" parent="jump"]
+position = Vector2(-65, -55)
+texture_normal = SubResource("AtlasTexture_ac17a")
+action = "jump"
+
+[node name="A" type="TouchScreenButton" parent="jump"]
+position = Vector2(-90, -36)
+texture_normal = SubResource("AtlasTexture_mf3qu")
 action = "jump"
 
 [node name="stick" type="Control" parent="."]

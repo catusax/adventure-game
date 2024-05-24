@@ -21,7 +21,8 @@ var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as floa
 @onready var graphics: Node2D = $Graphics
 @onready var state_machine: StateMachine = $StateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-	
+@onready var stats: Stats = $Stats
+
 func move(speed: float,delta:float) -> void:
 	velocity.x = move_toward(velocity.x, speed * direction,acceleration * delta)
 	

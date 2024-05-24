@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0lk1fqf7e4ta"]
+[gd_scene load_steps=6 format=3 uid="uid://b0lk1fqf7e4ta"]
 
 [ext_resource type="Script" path="res://classes/stateMachine.gd" id="1_gths3"]
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_owv85"]
 [ext_resource type="Script" path="res://classes/hitbox.gd" id="2_hfvb3"]
 [ext_resource type="Script" path="res://classes/hurtbox.gd" id="2_ypng2"]
+[ext_resource type="Script" path="res://classes/stats.gd" id="5_xciwi"]
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -29,3 +30,6 @@ script = ExtResource("2_ypng2")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("1_gths3")
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("5_xciwi")
